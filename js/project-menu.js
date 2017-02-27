@@ -2,6 +2,8 @@
 
 $( document ).ready(function() {
 
+  console.log('doument loading');
+
   let def_givenMenu = $('#centerImg');
   let def_allCharMenus = def_givenMenu.closest('div').children('.character-menu');
   let def_thisQuoteList = def_givenMenu.children('.quote-list');
@@ -23,11 +25,11 @@ $( document ).ready(function() {
     imgClick(clickedMenu, imgClickFlag);
   });
 
-  $(".quote").click(function(e) {
-    e.preventDefault();
-    let clickedLink = $(this);
-    quoteClick(clickedLink);
-  });
+  // $(".quote").click(function(e) {
+  //   e.preventDefault();
+  //   let clickedLink = $(this);
+  //   quoteClick(clickedLink);
+  // });
 
   // functions
 
@@ -35,10 +37,10 @@ $( document ).ready(function() {
     givenImage.toggleClass("hovered-img-link");
   };
 
-  function quoteClick(givenQuote) {
-    const thisAudio = new Audio(givenQuote.data('audio'));
-    thisAudio.play();
-  };
+  // function quoteClick(givenQuote) {
+  //   const thisAudio = new Audio(givenQuote.data('audio'));
+  //   thisAudio.play();
+  // };
 
 
   function resizeHandler() {
@@ -124,7 +126,7 @@ $( document ).ready(function() {
       } else {
         $(element).attr('class', 'character-menu').addClass('selectedImg');
         setTimeout(function() { $(element).addClass('selectedImgAction'); }, 1000);
-        setTimeout(function() { processAudioLinks(c_thisQuoteList); },1500);
+        setTimeout(function() { processLinks(c_thisQuoteList); },1500);
       };
     });
 
@@ -214,18 +216,21 @@ $( document ).ready(function() {
     imgClickFlag = 0;
   };
 
-  function processAudioLinks(p_thisQuoteList) {
-    const circleSize = 225;
-    const circleAlignment = -1.25;
-    const circleLeftOffset = 80;
-    const circleTopOffset = 115;
-    const theseAudioLinks = p_thisQuoteList.children();
+  function processLinks(p_thisQuoteList) {
+    console.log(p_thisQuoteList);
 
-    for(let i = 0, l = theseAudioLinks.length; i < l; i++) {
+    const circleSize = 200;
+    const circleAlignment = -1.5;
+    const circleLeftOffset = -95;
+    const circleTopOffset = 140;
+    const theseLinks = p_thisQuoteList.children();
+
+    console.log('processing links');
+    for(let i = 0, l = theseLinks.length; i < l; i++) {
       const centerAngleInRadians = ((180/l)*(i))*(Math.PI/180);
 
-      theseAudioLinks[i].style.left = ((circleSize*Math.cos(circleAlignment*centerAngleInRadians)) + circleLeftOffset).toFixed(0) + "px";
-      theseAudioLinks[i].style.top = ((circleSize*Math.sin(circleAlignment*centerAngleInRadians)) - circleTopOffset).toFixed(0) + "px";
+      theseLinks[i].style.left = ((circleSize*Math.cos(circleAlignment*centerAngleInRadians)) + circleLeftOffset).toFixed(0) + "px";
+      theseLinks[i].style.top = ((circleSize*Math.sin(circleAlignment*centerAngleInRadians)) - circleTopOffset).toFixed(0) + "px";
     };
 
     p_thisQuoteList.toggleClass('open');

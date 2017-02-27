@@ -117,22 +117,48 @@ img.logo {
   transition: all 700ms ease-out;
 }
 
-.quote-list a {
-  height: 20px;
-  width: 40px;
+.quote {
+  width: 400px;
 
+  background: transparent;
   color: white;
   display: block;
+  font-size: 16px;
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  font-size: 20px;
-  top: -300px;
   position: absolute;
   text-align: center;
+  top: -200px;
+}
+
+.quote a {
+  color: white;
+  display: block;
+  font-size: 16px;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  position: absolute;
+  text-align: center;
+  top: -200px;
 }
 
 .open.quote-list {
   opacity: 1;
   transform: scale(1);
+}
+
+.github {
+  height: 2em;
+  width: 2em;
+
+  border-radius: 15%;
+  margin-right: -90px;
+}
+
+.heroku {
+  height: 2.3em;
+  width: 2.3em;
+
+  margin-left: -110px;
+  margin-top: -3px;
 }
 
 img.circle {
@@ -178,6 +204,7 @@ img.circle {
     transform: scale(.75);
     transition: transform 1s;
   }
+
 }
 
 @media (min-width: 1001px) {
