@@ -8,9 +8,9 @@ $( document ).ready(function() {
   let imgClickFlag = 0;
   let prevScreenWidth = $(window).width();
 
-  $(window).resize(resizeHandler());
-
   startCheckSize();
+
+  $(window).resize(resizeHandler());
 
   $(".circle").hover(function() {
     let hoveredImage = $(this);
@@ -60,14 +60,13 @@ $( document ).ready(function() {
   };
 
   function checkSize() {
-
     const cs_screenWidth = $(window).width();
 
-    def_allCharMenus.each((index) => {
+    def_allCharMenus.each((index, element) => {
       let direction;
 
       if (cs_screenWidth > 1000) {
-        switch ($(this).attr('id')) {
+        switch ($(element).attr('id')) {
           case 'centerImg':
             direction = "center";
             break;
@@ -85,7 +84,7 @@ $( document ).ready(function() {
             break;
         };
       } else {
-        switch ($(this).attr('id')) {
+        switch ($(element).attr('id')) {
           case 'centerImg':
             direction = "center";
             break;
@@ -105,11 +104,10 @@ $( document ).ready(function() {
       };
 
       if (((cs_screenWidth > 1000) && (prevScreenWidth < 1000)) || ((cs_screenWidth < 1000) && (prevScreenWidth > 1000))) {
-        $(this).attr('class', 'character-menu');
-        const thisMenu = $(this);
-        setTimeout(function() { thisMenu.addClass(direction); }, 1000);
+        $(element).attr('class', 'character-menu');
+        setTimeout(function() { $(element).addClass(direction); }, 1000);
       } else {
-        $(this).addClass(direction);
+        $(element).addClass(direction);
       };
     });
 
@@ -118,17 +116,14 @@ $( document ).ready(function() {
 
   function imgCollapse(c_givenMenu, c_allCharMenus, c_thisQuoteList) {
 
-    c_allCharMenus.each((index) => {
+    c_allCharMenus.each((index, element) => {
 
-      // $('html, body').animate({ scrollTop: 0 }, 'fast');
-
-      if ($(this).attr('id') !== c_givenMenu.attr('id')) {
-        $(this).attr('class', 'character-menu').addClass('notSelectedImg');
-        $(this).delay(300).fadeToggle('slow');
+      if ($(element).attr('id') !== c_givenMenu.attr('id')) {
+        $(element).attr('class', 'character-menu').addClass('notSelectedImg');
+        $(element).delay(300).fadeToggle('slow');
       } else {
-        $(this).attr('class', 'character-menu').addClass('selectedImg');
-        const thisMenu = $(this);
-        setTimeout(function() { thisMenu.addClass('selectedImgAction'); }, 1000);
+        $(element).attr('class', 'character-menu').addClass('selectedImg');
+        setTimeout(function() { $(element).addClass('selectedImgAction'); }, 1000);
         setTimeout(function() { processAudioLinks(c_thisQuoteList); },1500);
       };
     });
@@ -138,10 +133,10 @@ $( document ).ready(function() {
 
   function imgExpandHoriz(eh_givenMenu, eh_allCharMenus, eh_thisQuoteList) {
 
-    eh_allCharMenus.each((index) => {
+    eh_allCharMenus.each((index, element) => {
       let direction;
 
-      switch ($(this).attr('id')) {
+      switch ($(element).attr('id')) {
         case 'centerImg':
           direction = "center";
           break;
@@ -161,18 +156,17 @@ $( document ).ready(function() {
 
       if (imgClickFlag === 1) {
         eh_thisQuoteList.toggleClass('open');
-        const thisMenu = $(this);
 
-        if ($(this).attr('id') !== eh_givenMenu.attr('id')) {
-          setTimeout(function() { thisMenu.fadeToggle(); }, 300);
-          setTimeout(function() { thisMenu.addClass(direction); }, 1000);
+        if ($(element).attr('id') !== eh_givenMenu.attr('id')) {
+          setTimeout(function() { $(element).fadeToggle(); }, 300);
+          setTimeout(function() { $(element).addClass(direction); }, 1000);
         } else {
-          $(this).removeClass('selectedImgAction');
-          setTimeout(function() { thisMenu.addClass(direction); }, 1000);
+          $(element).removeClass('selectedImgAction');
+          setTimeout(function() { $(element).addClass(direction); }, 1000);
         };
 
       } else {
-        $(this).addClass(direction);
+        $(element).addClass(direction);
       };
     });
 
@@ -181,11 +175,10 @@ $( document ).ready(function() {
 
   function imgExpandVert(ev_givenMenu, ev_allCharMenus, ev_thisQuoteList) {
 
-    ev_allCharMenus.each((index) => {
-
+     ev_allCharMenus.each((index, element) => {
       let direction;
 
-      switch ($(this).attr('id')) {
+      switch ($(element).attr('id')) {
         case 'centerImg':
           direction = "center";
           break;
@@ -204,19 +197,17 @@ $( document ).ready(function() {
       };
 
       if (imgClickFlag === 1) {
-        const thisMenu = $(this);
-
         ev_thisQuoteList.toggleClass('open');
 
-        if ($(this).attr('id') !== ev_givenMenu.attr('id')) {
-          setTimeout(function() { thisMenu.fadeToggle(); }, 300);
-          setTimeout(function() { thisMenu.addClass(direction); }, 1000);
+        if ($(element).attr('id') !== ev_givenMenu.attr('id')) {
+          setTimeout(function() { $(element).fadeToggle(); }, 300);
+          setTimeout(function() { $(element).addClass(direction); }, 1000);
         } else {
-          $(this).removeClass('selectedImgAction');
-          setTimeout(function() { thisMenu.addClass(direction); }, 1000);
+          $(element).removeClass('selectedImgAction');
+          setTimeout(function() { $(element).addClass(direction); }, 1000);
         };
       } else {
-        $(this).addClass(direction);
+        $(element).addClass(direction);
       };
     });
 
@@ -248,13 +239,13 @@ $( document ).ready(function() {
       if (imgClicked === 0) {
         imgCollapse(givenMenu, allCharMenus, thisQuoteList);
       } else {
-        imgExpandVert(givenMenu, allCharMenus, thisQuoteList, $(window).width());
+        imgExpandVert(givenMenu, allCharMenus, thisQuoteList);
       };
     } else {
       if (imgClicked === 0) {
         imgCollapse(givenMenu, allCharMenus, thisQuoteList);
       } else {
-        imgExpandHoriz(givenMenu, allCharMenus, thisQuoteList, $(window).width());
+        imgExpandHoriz(givenMenu, allCharMenus, thisQuoteList);
       };
     };
   };

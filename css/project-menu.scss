@@ -29,6 +29,7 @@ $color-mid: #961511;
 .main {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   margin: 0 auto;
   height: 100%;
   width: 100%;
@@ -42,14 +43,12 @@ img.logo {
   margin-top: 68px;
   max-height: 400px;
   max-width: 600px;
-  transform: scale(1.13);
+  transform: scale(1);
 }
 
 .menu-container {
   height: 300px;
   width: 100%;
-
-  margin-top: 50px;
 }
 
 .character-menu {
@@ -59,13 +58,13 @@ img.logo {
   background-color: transparent;
   left: calc(50% - 100px);
   position: absolute;
-  top: 450px;
+  top: 350px;
   transition: all 1000ms ease-out;
 }
 
 .center {
   left: calc(50% - 100px);
-  top: 450px;
+  top: 350px;
 }
 
 .closeRightHoriz {
@@ -176,7 +175,7 @@ img.circle {
 
 @media (max-width: 1000px) {
   img.logo {
-    transform: scale(.5);
+    transform: scale(.75);
     transition: transform 1s;
   }
 }
