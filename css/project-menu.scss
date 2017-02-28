@@ -18,37 +18,33 @@ $color-mid: #961511;
   display: none;
   }
 
-// html, body {
-//   height: 100%;
-//   width: 100%;
-//
-//   margin:0;
-//   padding:0;
-// }
+html, body {
+  height: 100%;
+  width: 100%;
+
+  margin:0;
+  padding:0;
+}
 
 .main {
+  height: 100%;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 0 auto;
-  height: 100%;
-  width: 100%;
 }
 
 .header {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
+  margin-top: -100px;
 }
 
 img.logo {
-  margin-top: 68px;
-  max-height: 400px;
-  max-width: 600px;
-  transform: scale(1);
-}
-
-.menu-container {
-  height: 300px;
-  width: 100%;
+  height: 10em;
 }
 
 .character-menu {
@@ -58,13 +54,13 @@ img.logo {
   background-color: transparent;
   left: calc(50% - 100px);
   position: absolute;
-  top: 350px;
+  top: 250px;
   transition: all 1000ms ease-out;
 }
 
 .center {
   left: calc(50% - 100px);
-  top: 350px;
+  top: 250px;
 }
 
 .closeRightHoriz {
@@ -89,37 +85,37 @@ img.logo {
 
 .closeRightVert {
   left: calc(50% - 100px);
-  top: 750px;
+  top: 550px;
   transition: all 1000ms ease-out;
 }
 
 .closeLeftVert {
   left: calc(50% - 100px);
-  top: 1050px;
+  top: 850px;
   transition: all 1000ms ease-out;
 }
 
 .farRightVert {
   left: calc(50% - 100px);
-  top: 1350px;
+  top: 1150px;
   transition: all 1000ms ease-out;
 }
 
 .farLeftVert {
   left: calc(50% - 100px);
-  top: 1650px;
+  top: 1450px;
   transition: all 1000ms ease-out;
 }
 
 .quote-list {
+  width: 100%;
+
   opacity: 0;
   transform: scale(0);
   transition: all 700ms ease-out;
 }
 
 .quote {
-  width: 400px;
-
   background: transparent;
   color: white;
   display: block;
@@ -127,17 +123,6 @@ img.logo {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   position: absolute;
   text-align: center;
-  top: -200px;
-}
-
-.quote a {
-  color: white;
-  display: block;
-  font-size: 16px;
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  position: absolute;
-  text-align: center;
-  top: -200px;
 }
 
 .open.quote-list {
@@ -150,15 +135,14 @@ img.logo {
   width: 2em;
 
   border-radius: 15%;
-  margin-right: -90px;
+  margin-right: -110px;
+  margin-top: 50px;
 }
 
 .heroku {
-  height: 2.3em;
-  width: 2.3em;
-
-  margin-left: -110px;
-  margin-top: -3px;
+  width: 70px;
+  margin-left: -10px;
+  margin-top: 55px;
 }
 
 img.circle {
@@ -174,11 +158,17 @@ img.circle {
   z-index: 1;
 }
 
+.selectedImg p {
+  margin-left: -160px;
+  width: 400px;
+}
+
 .selectedImgAction {
   margin-top: 100px;
 }
 
 .notSelectedImg {
+  width: 200px;
   z-index: 0;
 }
 
@@ -196,19 +186,5 @@ img.circle {
   }
  20% {
     opacity: 0;
-  }
-}
-
-@media (max-width: 1000px) {
-  img.logo {
-    transform: scale(.75);
-    transition: transform 1s;
-  }
-
-}
-
-@media (min-width: 1001px) {
-  img.logo {
-    transition: transform 1s;
   }
 }

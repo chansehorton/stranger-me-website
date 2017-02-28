@@ -162,9 +162,15 @@ $( document ).ready(function() {
         if ($(element).attr('id') !== eh_givenMenu.attr('id')) {
           setTimeout(function() { $(element).fadeToggle(); }, 300);
           setTimeout(function() { $(element).addClass(direction); }, 1000);
+          setTimeout(function() {
+            $(element).removeClass('notSelectedImg');
+          }, 1100);
         } else {
           $(element).removeClass('selectedImgAction');
           setTimeout(function() { $(element).addClass(direction); }, 1000);
+          setTimeout(function() {
+            $(element).removeClass('selectedImg');
+          }, 1100);
         };
 
       } else {
@@ -204,9 +210,15 @@ $( document ).ready(function() {
         if ($(element).attr('id') !== ev_givenMenu.attr('id')) {
           setTimeout(function() { $(element).fadeToggle(); }, 300);
           setTimeout(function() { $(element).addClass(direction); }, 1000);
+          setTimeout(function() {
+            $(element).removeClass('notSelectedImg');
+          }, 1100);
         } else {
           $(element).removeClass('selectedImgAction');
           setTimeout(function() { $(element).addClass(direction); }, 1000);
+          setTimeout(function() {
+            $(element).removeClass('selectedImg');
+          }, 1100);
         };
       } else {
         $(element).addClass(direction);
@@ -219,10 +231,10 @@ $( document ).ready(function() {
   function processLinks(p_thisQuoteList) {
     console.log(p_thisQuoteList);
 
-    const circleSize = 200;
+    const circleSize = 170;
     const circleAlignment = -1.5;
-    const circleLeftOffset = -95;
-    const circleTopOffset = 140;
+    const circleLeftOffset = 60;
+    const circleTopOffset = 180;
     const theseLinks = p_thisQuoteList.children();
 
     console.log('processing links');
