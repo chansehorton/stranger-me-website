@@ -63,15 +63,15 @@ img.logo {
   top: 250px;
 }
 
-.closeRightHoriz {
-  left: calc((33.3%)*2 - 100px);
-  transition: all 1000ms ease-out;
-}
-
-.closeLeftHoriz {
-  left: calc(33.3% - 100px);
-  transition: all 1000ms ease-out;
-}
+// .closeRightHoriz {
+//   left: calc((33.3%)*2 - 100px);
+//   transition: all 1000ms ease-out;
+// }
+//
+// .closeLeftHoriz {
+//   left: calc(33.3% - 100px);
+//   transition: all 1000ms ease-out;
+// }
 
 .farRightHoriz {
   left: calc((16.7%)*5 - 100px);
@@ -83,27 +83,29 @@ img.logo {
   transition: all 1000ms ease-out;
 }
 
-.closeRightVert {
-  left: calc(50% - 100px);
-  top: 550px;
-  transition: all 1000ms ease-out;
-}
-
-.closeLeftVert {
-  left: calc(50% - 100px);
-  top: 850px;
-  transition: all 1000ms ease-out;
-}
+// .closeRightVert {
+//   left: calc(50% - 100px);
+//   top: 550px;
+//   transition: all 1000ms ease-out;
+// }
+//
+// .closeLeftVert {
+//   left: calc(50% - 100px);
+//   top: 850px;
+//   transition: all 1000ms ease-out;
+// }
 
 .farRightVert {
   left: calc(50% - 100px);
-  top: 1150px;
+  // top: 1150px;
+  top: 550px;
   transition: all 1000ms ease-out;
 }
 
 .farLeftVert {
   left: calc(50% - 100px);
-  top: 1450px;
+  // top: 1450px;
+  top: 850px;
   transition: all 1000ms ease-out;
 }
 

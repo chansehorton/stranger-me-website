@@ -78,12 +78,12 @@ $( document ).ready(function() {
           case 'farRightImg':
             direction = "farRightHoriz";
             break;
-          case 'closeLeftImg':
-            direction = "closeLeftHoriz";
-            break;
-          case 'closeRightImg':
-            direction = "closeRightHoriz";
-            break;
+          // case 'closeLeftImg':
+          //   direction = "closeLeftHoriz";
+          //   break;
+          // case 'closeRightImg':
+          //   direction = "closeRightHoriz";
+          //   break;
         };
       } else {
         switch ($(element).attr('id')) {
@@ -96,12 +96,12 @@ $( document ).ready(function() {
           case 'farRightImg':
             direction = "farRightVert";
             break;
-          case 'closeLeftImg':
-            direction = "closeLeftVert";
-            break;
-          case 'closeRightImg':
-            direction = "closeRightVert";
-            break;
+          // case 'closeLeftImg':
+          //   direction = "closeLeftVert";
+          //   break;
+          // case 'closeRightImg':
+          //   direction = "closeRightVert";
+          //   break;
         };
       };
 
@@ -148,12 +148,12 @@ $( document ).ready(function() {
         case 'farRightImg':
           direction = "farRightHoriz";
           break;
-        case 'closeLeftImg':
-          direction = "closeLeftHoriz";
-          break;
-        case 'closeRightImg':
-          direction = "closeRightHoriz";
-          break;
+        // case 'closeLeftImg':
+        //   direction = "closeLeftHoriz";
+        //   break;
+        // case 'closeRightImg':
+        //   direction = "closeRightHoriz";
+        //   break;
       };
 
       if (imgClickFlag === 1) {
@@ -196,12 +196,12 @@ $( document ).ready(function() {
         case 'farRightImg':
           direction = "farRightVert";
           break;
-        case 'closeLeftImg':
-          direction = "closeLeftVert";
-          break;
-        case 'closeRightImg':
-          direction = "closeRightVert";
-          break;
+        // case 'closeLeftImg':
+        //   direction = "closeLeftVert";
+        //   break;
+        // case 'closeRightImg':
+        //   direction = "closeRightVert";
+        //   break;
       };
 
       if (imgClickFlag === 1) {
